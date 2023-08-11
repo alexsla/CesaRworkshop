@@ -1,30 +1,168 @@
 ---
-title: "Untitled"
+title: "Cesar R workshop: welcome to the tidyverse"
 author: "Alex Slavenko & Evatt Chrigwin"
 date: "`r Sys.Date()`"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+## Task 1.
+### Load all following packages: `tidyr`, `dplyr`, `magrittr`, `readr`, `ggplot2`?
+
+#You should have all of these packages installed from the literacy quiz, but if not install them using `install.package("package_name")`. 
+
+```{r}
+#load packages
+library(tidyr)
+library(dplyr)
+library(readr)
+library(ggplot2)
+
 ```
 
-## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+## Task 2.
+### Set your working directory for today
+```{r, eval = FALSE}
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+setwd('/Users/Evatt/Dropbox (cesar & EnviroDNA)/Evatt/R_workshop')
 
-```{r cars}
-summary(cars)
 ```
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+## Task 3.
+### Import the dataset (workshop_2_data.csv) and store it as an object named data
+```{r}
+data1<-read.csv('Play_data.csv')
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+## Task 4.
+### Have a look at your data
+### Is your data long or wide?
+```{r}
+head(data1)
+str(data1)
+```
+
+
+## Task 5.
+### Surivial was scored at multiple times during the experiment.Today, we will only consider survival at the last scoring time
+### Idetify the latest scoring time using `distinct()` and then use `filter()` to create a new dataset that exludes all other scoring times
+```{r}
+distinct(data1,Time)
+data2<-filter(data1, Time=='72h')
+str(data2)
+
+table(data1$Population)
+```
+## Task 6.
+### Raw data often contain more infomation that what we need (e.g., extra traits and general notes) that can make things messy
+### Today, we are only interested in 5 coloumns: Population, Rep, Time, Alive, Dead 
+### Can you use the `select()` function to create a new dataset only includes these 5 coloumns? 
+```{r}
+data3<-select(data2,'Population', 'Rep', 'Time', 'Alive', 'Dead')
+head(data3)
+```
+
+## Task 7.
+### We are interested in the survival rate of our critters but we only have the number alive and dead per replicate
+### We can use the `mutate()` function to create new dataset with the coloumn for survival rate
+
+```{r}
+data4<-mutate(data3, Survivial=Alive/(Alive+Dead))
+```
+
+## Task 8.
+### Tasks 4-6 have allowed us create our "Final" dataset that is ready for analysis. However, doing so also required us to make 3 new and seperate dataset along the way... All these extra datasets can add up and create confusion. Luckily there is a better way!
+
+### We can use pipes "%>%" to complete tasks 4-6 in a single line of code.  
+######## NOTE EVATT NEEDS TO MAKE SLIDES TO EXPLAIN PIPES #####
+```{r}
+data5<-data1%>%
+  filter(Time=='72h')%>%
+  select('Population', 'Rep', 'Time', 'Alive', 'Dead')%>%
+  mutate(Survivial=Alive/(Alive+Dead))
+```
+
+## Task 9.
+### Let's get some answers from our data!
+### Find the  average survival using `summarise()`
+```{r}
+data5%>%
+  summarise(mean(Survivial))
+```
+
+
+
+## Task 10.
+### Now we want to know the average survival for each population
+### Calculate the average suvivial of each population by using piping to add with `group_by()` to code above.
+```{r}
+data5%>%
+  group_by(Population)%>%
+  summarise(mean(Survivial))
+```
+
+
+###Task 10
+### using `count()`, Find the total number of replicates of each population and the total number of individuals across all replicates
+
+```{r}
+data5%>%
+    group_by(Population)%>%
+    count()
+```
+
+### using `summarise()`, Find the total number of individuals tested within each population
+
+```{r}
+data5%>%
+    group_by(Population)%>%
+    summarise(total=sum(Alive+Dead))
+```
+
+
+## Task 11.
+### Now we have the data all neat and tidy, let's save this version and send to send to other people.
+```{r}
+write.csv(data5, 'cool_old_data.csv')
+
+```
+
+
+
+## Task 12
+### Oh cool someone sent us some new data! Let's add this to our existing dataset!
+### Import the data
+```{r}
+data_new<-read.csv('Oh_cool_some_new_data.csv')
+```
+
+## Task 4.
+### Have a look at your data
+### Is your data long or wide?
+```{r}
+head(data_new)
+str(data_new)
+```
+## Task 13.
+### the new data has a different format (wide) than your old data (narrow)
+### before we can combine them, we need them to be in the same format
+```{r}
+data_size<-data_new %>% pivot_longer(cols=c('Brunswick',	'Carlton','Coburg',	'Northcote'),
+                          names_to = "Population" , 
+                          values_to = "Growth")
+
+```
+
+
+## Task 14.
+### combine datsets using join
+```{r}
+df_fin <- left_join(data5, data_size, by=c('Population', 'Rep'))
+```
+
+## Task 15.
+### plot(if we have time)
+```{r}
+df_fin%>%
+ggplot(aes(x=Growth, y=Survivial)) + geom_point()
+```
