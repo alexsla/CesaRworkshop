@@ -1,0 +1,145 @@
+﻿Population,Time,Rep,Alive,Dead,Taste,Colour,Stickyness,Hat_or_no_hat,Crop_type,Season,Jealousy,Leg_number,Shoe_number
+Brunswick,24h,1,5,10,Sweet,Red,Low,No Hat,Apple,Summer,Low,4,8
+Brunswick,24h,2,6,9,Salty,Green,High,Hat,Corn,Fall,Moderate,2,6
+Brunswick,24h,3,5,10,Sour,Yellow,Medium,No Hat,Lemon,Spring,High,4,7
+Brunswick,24h,4,6,9,Bitter,Orange,Low,Hat,Orange,Winter,Low,2,9
+Brunswick,24h,5,9,6,Umami,Purple,Medium,Hat,Eggplant,Summer,Moderate,4,8
+Brunswick,24h,6,5,10,Sweet,Blue,High,No Hat,Blueberry,Fall,Moderate,2,6
+Brunswick,24h,7,8,7,Salty,Brown,Low,Hat,Wheat,Spring,High,4,7
+Brunswick,24h,8,7,8,Sour,Pink,Medium,No Hat,Strawberry,Winter,Low,2,9
+Brunswick,24h,9,9,6,Bitter,Gray,Low,Hat,Grape,Summer,Moderate,4,8
+Brunswick,24h,10,8,7,Umami,White,Medium,Hat,Rice,Fall,Moderate,2,6
+Brunswick,24h,11,6,9,Sweet,Red,High,No Hat,Tomato,Spring,Low,4,7
+Brunswick,24h,12,7,8,Salty,Green,Low,Hat,Lettuce,Winter,High,2,9
+Brunswick,48h,1,9,6,Sweet,Red,Low,No Hat,Apple,Summer,Low,4,8
+Brunswick,48h,2,7,8,Salty,Green,High,Hat,Corn,Fall,Moderate,2,6
+Brunswick,48h,3,8,7,Sour,Yellow,Medium,No Hat,Lemon,Spring,High,4,7
+Brunswick,48h,4,6,9,Bitter,Orange,Low,Hat,Orange,Winter,Low,2,9
+Brunswick,48h,5,9,6,Umami,Purple,Medium,Hat,Eggplant,Summer,Moderate,4,8
+Brunswick,48h,6,7,8,Sweet,Blue,High,No Hat,Blueberry,Fall,Moderate,2,6
+Brunswick,48h,7,7,8,Salty,Brown,Low,Hat,Wheat,Spring,High,4,7
+Brunswick,48h,8,9,6,Sour,Pink,Medium,No Hat,Strawberry,Winter,Low,2,9
+Brunswick,48h,9,6,9,Bitter,Gray,Low,Hat,Grape,Summer,Moderate,4,8
+Brunswick,48h,10,7,8,Umami,White,Medium,Hat,Rice,Fall,Moderate,2,6
+Brunswick,48h,11,6,9,Sweet,Red,High,No Hat,Tomato,Spring,Low,4,7
+Brunswick,48h,12,6,9,Salty,Green,Low,Hat,Lettuce,Winter,High,2,9
+Brunswick,72h,1,6,9,Sweet,Red,Low,No Hat,Apple,Summer,Low,4,8
+Brunswick,72h,2,6,9,Salty,Green,High,Hat,Corn,Fall,Moderate,2,6
+Brunswick,72h,3,5,10,Sour,Yellow,Medium,No Hat,Lemon,Spring,High,4,7
+Brunswick,72h,4,7,8,Bitter,Orange,Low,Hat,Orange,Winter,Low,2,9
+Brunswick,72h,5,6,9,Umami,Purple,Medium,Hat,Eggplant,Summer,Moderate,4,8
+Brunswick,72h,6,8,7,Sweet,Blue,High,No Hat,Blueberry,Fall,Moderate,2,6
+Brunswick,72h,7,7,8,Salty,Brown,Low,Hat,Wheat,Spring,High,4,7
+Brunswick,72h,8,6,9,Sour,Pink,Medium,No Hat,Strawberry,Winter,Low,2,9
+Brunswick,72h,9,8,7,Bitter,Gray,Low,Hat,Grape,Summer,Moderate,4,8
+Brunswick,72h,10,9,6,Umami,White,Medium,Hat,Rice,Fall,Moderate,2,6
+Brunswick,72h,11,8,7,Sweet,Red,High,No Hat,Tomato,Spring,Low,4,7
+Brunswick,72h,12,7,8,Salty,Green,Low,Hat,Lettuce,Winter,High,2,9
+Carlton,24h,1,1,14,Sour,Yellow,Medium,No Hat,Banana,Summer,High,4,8
+Carlton,24h,2,1,14,Bitter,Orange,Low,Hat,Carrot,Fall,Low,2,6
+Carlton,24h,3,1,14,Umami,Purple,Medium,Hat,Potato,Spring,Moderate,4,7
+Carlton,24h,4,1,14,Sweet,Blue,High,No Hat,Blueberry,Winter,Moderate,2,9
+Carlton,24h,5,8,4,Salty,Brown,Low,Hat,Wheat,Summer,High,4,8
+Carlton,24h,6,9,1,Sour,Pink,Medium,No Hat,Strawberry,Fall,Low,2,6
+Carlton,24h,7,3,12,Bitter,Gray,Low,Hat,Grape,Spring,Moderate,4,7
+Carlton,24h,8,1,14,Umami,White,Medium,Hat,Rice,Winter,Moderate,2,9
+Carlton,24h,9,2,13,Sweet,Red,High,No Hat,Tomato,Summer,Low,4,8
+Carlton,24h,10,1,14,Salty,Green,Low,Hat,Lettuce,Spring,High,2,6
+Carlton,24h,11,9,2,Sour,Yellow,Medium,No Hat,Banana,Fall,High,4,7
+Carlton,24h,12,15,3,Bitter,Orange,Low,Hat,Carrot,Winter,Low,2,9
+Carlton,48h,1,3,12,Sour,Yellow,Medium,No Hat,Banana,Summer,High,4,8
+Carlton,48h,2,2,13,Bitter,Orange,Low,Hat,Carrot,Fall,Low,2,6
+Carlton,48h,3,3,12,Umami,Purple,Medium,Hat,Potato,Spring,Moderate,4,7
+Carlton,48h,4,2,13,Sweet,Blue,High,No Hat,Blueberry,Winter,Moderate,2,9
+Carlton,48h,5,1,14,Salty,Brown,Low,Hat,Wheat,Summer,High,4,8
+Carlton,48h,6,1,14,Sour,Pink,Medium,No Hat,Strawberry,Fall,Low,2,6
+Carlton,48h,7,2,13,Bitter,Gray,Low,Hat,Grape,Spring,Moderate,4,7
+Carlton,48h,8,1,14,Umami,White,Medium,Hat,Rice,Winter,Moderate,2,9
+Carlton,48h,9,3,12,Sweet,Red,High,No Hat,Tomato,Summer,Low,4,8
+Carlton,48h,10,3,12,Salty,Green,Low,Hat,Lettuce,Spring,High,2,6
+Carlton,48h,11,1,14,Sour,Yellow,Medium,No Hat,Banana,Fall,High,4,7
+Carlton,48h,12,3,12,Bitter,Orange,Low,Hat,Carrot,Winter,Low,2,9
+Carlton,72h,1,1,14,Sour,Yellow,Medium,No Hat,Banana,Summer,High,4,8
+Carlton,72h,2,3,12,Bitter,Orange,Low,Hat,Carrot,Fall,Low,2,6
+Carlton,72h,3,3,12,Umami,Purple,Medium,Hat,Potato,Spring,Moderate,4,7
+Carlton,72h,4,2,13,Sweet,Blue,High,No Hat,Blueberry,Winter,Moderate,2,9
+Carlton,72h,5,9,1,Salty,Brown,Low,Hat,Wheat,Summer,High,4,8
+Carlton,72h,6,1,14,Sour,Pink,Medium,No Hat,Strawberry,Fall,Low,2,6
+Carlton,72h,7,3,12,Bitter,Gray,Low,Hat,Grape,Spring,Moderate,4,7
+Carlton,72h,8,3,12,Umami,White,Medium,Hat,Rice,Winter,Moderate,2,9
+Carlton,72h,9,8,1,Sweet,Red,High,No Hat,Tomato,Summer,Low,4,8
+Carlton,72h,10,3,12,Salty,Green,Low,Hat,Lettuce,Spring,High,2,6
+Carlton,72h,11,2,13,Sour,Yellow,Medium,No Hat,Banana,Fall,High,4,7
+Carlton,72h,12,3,12,Bitter,Orange,Low,Hat,Carrot,Winter,Low,2,9
+Coburg,24h,1,2,13,Umami,Purple,Medium,Hat,Potato,Summer,Moderate,4,8
+Coburg,24h,2,1,14,Sweet,Blue,High,No Hat,Blueberry,Fall,Moderate,2,6
+Coburg,24h,3,2,13,Salty,Brown,Low,Hat,Wheat,Spring,High,4,7
+Coburg,24h,4,2,13,Sour,Pink,Medium,No Hat,Strawberry,Winter,Low,2,9
+Coburg,24h,5,10,2,Bitter,Gray,Low,Hat,Grape,Summer,Moderate,4,8
+Coburg,24h,6,10,2,Umami,White,Medium,Hat,Rice,Fall,Moderate,2,6
+Coburg,24h,7,10,2,Sweet,Red,High,No Hat,Tomato,Spring,Low,4,7
+Coburg,24h,8,10,2,Salty,Green,Low,Hat,Lettuce,Winter,High,2,9
+Coburg,24h,9,10,2,Sour,Yellow,Medium,No Hat,Banana,Summer,High,4,8
+Coburg,24h,10,10,2,Bitter,Orange,Low,Hat,Carrot,Fall,Low,2,6
+Coburg,24h,11,1,12,Umami,Purple,Medium,Hat,Potato,Spring,Moderate,4,7
+Coburg,24h,12,2,13,Sweet,Blue,High,No Hat,Blueberry,Winter,Moderate,2,9
+Coburg,48h,1,3,12,Sweet,Blue,High,No Hat,Blueberry,Fall,Moderate,2,6
+Coburg,48h,2,3,12,Salty,Brown,Low,Hat,Wheat,Spring,High,4,7
+Coburg,48h,3,6,9,Sour,Pink,Medium,No Hat,Strawberry,Winter,Low,2,9
+Coburg,48h,4,4,11,Bitter,Gray,Low,Hat,Grape,Summer,Moderate,4,8
+Coburg,48h,5,6,9,Umami,White,Medium,Hat,Rice,Fall,Moderate,2,6
+Coburg,48h,6,4,11,Sweet,Red,High,No Hat,Tomato,Spring,Low,4,7
+Coburg,48h,7,2,13,Salty,Green,Low,Hat,Lettuce,Winter,High,2,9
+Coburg,48h,8,2,13,Sour,Yellow,Medium,No Hat,Banana,Summer,High,4,8
+Coburg,48h,9,2,13,Bitter,Orange,Low,Hat,Carrot,Fall,Low,2,6
+Coburg,48h,10,2,13,Umami,Purple,Medium,Hat,Potato,Spring,Moderate,4,7
+Coburg,48h,11,8,7,Sweet,Blue,High,No Hat,Blueberry,Winter,Moderate,2,9
+Coburg,48h,12,2,13,Salty,Brown,Low,Hat,Wheat,Summer,High,4,8
+Coburg,72h,1,2,13,Sweet,Blue,High,No Hat,Blueberry,Fall,Moderate,2,6
+Coburg,72h,2,8,7,Salty,Brown,Low,Hat,Wheat,Spring,High,4,7
+Coburg,72h,3,3,12,Sour,Pink,Medium,No Hat,Strawberry,Winter,Low,2,9
+Coburg,72h,4,6,9,Bitter,Gray,Low,Hat,Grape,Summer,Moderate,4,8
+Coburg,72h,5,2,9,Umami,White,Medium,Hat,Rice,Fall,Moderate,2,6
+Coburg,72h,6,5,10,Sweet,Red,High,No Hat,Tomato,Spring,Low,4,7
+Coburg,72h,7,3,10,Salty,Green,Low,Hat,Lettuce,Winter,High,2,9
+Coburg,72h,8,7,19,Sour,Yellow,Medium,No Hat,Banana,Summer,High,4,8
+Coburg,72h,9,6,9,Bitter,Orange,Low,Hat,Carrot,Fall,Low,2,6
+Coburg,72h,10,4,11,Umami,Purple,Medium,Hat,Potato,Spring,Moderate,4,7
+Coburg,72h,11,4,11,Sweet,Blue,High,No Hat,Blueberry,Winter,Moderate,2,9
+Coburg,72h,12,4,11,Salty,Brown,Low,Hat,Wheat,Summer,High,4,8
+Northcote,24h,1,1,14,Bitter,Gray,Low,Hat,Grape,Summer,Moderate,4,8
+Northcote,24h,2,2,13,Umami,White,Medium,Hat,Rice,Fall,Moderate,2,6
+Northcote,24h,3,2,13,Sweet,Red,High,No Hat,Tomato,Spring,Low,4,7
+Northcote,24h,4,1,14,Salty,Green,Low,Hat,Lettuce,Winter,High,2,9
+Northcote,24h,5,1,14,Sour,Yellow,Medium,No Hat,Banana,Summer,High,4,8
+Northcote,24h,6,0,15,Bitter,Orange,Low,Hat,Carrot,Fall,Low,2,6
+Northcote,24h,7,2,13,Umami,Purple,Medium,Hat,Potato,Spring,Moderate,4,7
+Northcote,24h,8,1,14,Sweet,Blue,High,No Hat,Blueberry,Winter,Moderate,2,9
+Northcote,24h,9,2,13,Salty,Brown,Low,Hat,Wheat,Summer,High,4,8
+Northcote,24h,10,0,15,Sour,Pink,Medium,No Hat,Strawberry,Fall,Low,2,6
+Northcote,24h,11,2,13,Bitter,Gray,Low,Hat,Grape,Spring,Moderate,4,7
+Northcote,24h,12,1,14,Umami,White,Medium,Hat,Rice,Winter,Moderate,2,9
+Northcote,48h,1,0,15,Bitter,Gray,Low,Hat,Grape,Summer,Moderate,4,8
+Northcote,48h,2,2,13,Umami,White,Medium,Hat,Rice,Fall,Moderate,2,6
+Northcote,48h,3,1,14,Sweet,Red,High,No Hat,Tomato,Spring,Low,4,7
+Northcote,48h,4,1,14,Salty,Green,Low,Hat,Lettuce,Winter,High,2,9
+Northcote,48h,5,0,15,Sour,Yellow,Medium,No Hat,Banana,Summer,High,4,8
+Northcote,48h,6,1,14,Bitter,Orange,Low,Hat,Carrot,Fall,Low,2,6
+Northcote,48h,7,2,13,Umami,Purple,Medium,Hat,Potato,Spring,Moderate,4,7
+Northcote,48h,8,0,15,Sweet,Blue,High,No Hat,Blueberry,Winter,Moderate,2,9
+Northcote,48h,9,1,14,Salty,Brown,Low,Hat,Wheat,Summer,High,4,8
+Northcote,48h,10,0,15,Sour,Pink,Medium,No Hat,Strawberry,Fall,Low,2,6
+Northcote,48h,11,2,13,Bitter,Gray,Low,Hat,Grape,Spring,Moderate,4,7
+Northcote,48h,12,0,15,Umami,White,Medium,Hat,Rice,Winter,Moderate,2,9
+Northcote,72h,1,2,20,Bitter,Gray,Low,Hat,Grape,Summer,Moderate,4,8
+Northcote,72h,2,1,13,Umami,White,Medium,Hat,Rice,Fall,Moderate,2,6
+Northcote,72h,3,1,13,Sweet,Red,High,No Hat,Tomato,Spring,Low,4,7
+Northcote,72h,4,1,13,Salty,Green,Low,Hat,Lettuce,Winter,High,2,9
+Northcote,72h,5,1,14,Sour,Yellow,Medium,No Hat,Banana,Summer,High,4,8
+Northcote,72h,6,1,13,Bitter,Orange,Low,Hat,Carrot,Fall,Low,2,6
+Northcote,72h,7,1,14,Umami,Purple,Medium,Hat,Potato,Spring,Moderate,4,7
+Northcote,72h,8,1,30,Sweet,Blue,High,No Hat,Blueberry,Winter,Moderate,2,9
+Northcote,72h,9,1,14,Salty,Brown,Low,Hat,Wheat,Summer,High,4,8
+Northcote,72h,10,1,14,Sour,Pink,Medium,No Hat,Strawberry,Fall,Low,2,6
+Northcote,72h,11,1,14,Bitter,Gray,Low,Hat,Grape,Spring,Moderate,4,7
+Northcote,72h,12,0,15,Umami,White,Medium,Hat,Rice,Winter,Moderate,2,9
