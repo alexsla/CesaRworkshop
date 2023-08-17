@@ -263,6 +263,9 @@ Did that work? Why not? Can you fix this code so it runs properly?
 ### Explanation:
 Sometimes, you will want to add comments or annotation to your code. Especially if you're writing long scripts, comments can help you keep track of what you're doing and why. This is especially useful when you're working with others, since sharing well-annotated code makes it easier for collaborators to understand how the code works. And remember - your main collaborator is future you, and future you will really appreciate it if you annotate your code properly now.
 
+![](images/old_code.jpg)
+
+
 Placing # before a line tells R to ignore it. R will still print it, but it won't treat it as code and will not attempt to run it.
 
 That's why this chunk:
