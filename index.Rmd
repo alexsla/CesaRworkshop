@@ -73,7 +73,7 @@ data1 <- read.csv('Play_data.csv')
 
 ## Data exploration and manipulation
 ### Have a look at your data.
-### Are your data long or wide?
+Are your data long or wide?
 
 `r hide("Long and wide? What are you talking about?")`
 
@@ -240,7 +240,7 @@ Basically, we have a really powerful tool that allows us to manipulate our data 
 
 `r unhide()`
 
-### using `count()`, Find the total number of replicates of each population and the total number of individuals across all replicates.
+### Using `count()`, Find the total number of replicates of each population and the total number of individuals across all replicates.
 
 ```{r, webex.hide="Click here to see the solution"}
 data5 %>%
@@ -248,7 +248,7 @@ data5 %>%
   count()
 ```
 
-`r hide("Something here falls off.")`
+`r hide("Something here feels off.")`
 
 You're right! Turns out there's an easier (and a harder) way to do this exercise.
 
@@ -265,7 +265,7 @@ data5 %>%
   summarise(n = n())
 ```
 
-But wait, if `tidyverse` already has `n()`, what's the point of `count()`? Turns out `count()` is a good example of the many quality-of-life functions `tidyverse` has to offer.
+But wait, if `tidyverse` already has `n()`, what's the point of `count()`? Turns out `count()` is a good example of the many quality-of-life improvements `tidyverse` has to offer over base R.
 
 `df %>% count(a)` is equivalent to `df %>% group_by(a) %>% summarise(n = n())`. It's basically a function that wraps a bunch of other functions into it, and allows you to write neater, shorter code.
 
@@ -305,7 +305,7 @@ data_new <- read.csv('Oh_cool_some_new_data.csv')
 
 
 ### Have a look at your data.
-### Are your data long or wide?
+Are your data long or wide?
 
 ```{r}
 head(data_new)
@@ -318,9 +318,11 @@ The new data have a different format (wide) than your old data (long). Before we
 
 ```{r, webex.hide="Click here to see the solution"}
 data_size <- data_new %>%
-  pivot_longer(cols = c('Brunswick',	'Carlton','Coburg',	'Northcote'),
+  pivot_longer(cols = c('Brunswick', 'Carlton', 'Coburg', 'Northcote'),
                names_to = "Population" , 
                values_to = "Growth")
+
+data_size
 ```
 
 `r hide ('Can I do the opposite?')`
@@ -342,7 +344,7 @@ data_size %>%
   pivot_wider(names_from = "Population",
               values_from = "Growth") %>%
   mutate(Brunswick = Brunswick + 5) %>%
-  pivot_longer(cols = c('Brunswick',	'Carlton','Coburg',	'Northcote'),
+  pivot_longer(cols = c('Brunswick', 'Carlton', 'Coburg', 'Northcote'),
                names_to = "Population" , 
                values_to = "Growth")
 ```
@@ -353,12 +355,13 @@ You can do this without the transformation, but this would require incorporating
 
 ### Combine the two datsets using one of the `join()` functions
 ```{r, webex.hide="Click here to see the solution"}
-df_fin <- left_join(data5, data_size, by=c('Population', 'Rep'))
+df_fin <- left_join(data5, data_size, by = c('Population', 'Rep'))
 ```
 
 `r hide("What do you mean by 'one of'?")`
 
 `tidyverse` has several functions available to join data.frames. They all share a similar syntax, which requires the following arguments:
+
 * `x` - the first data.frame
 * `y` - the second data.frame
 * `by` - which columns to join by
@@ -366,13 +369,16 @@ df_fin <- left_join(data5, data_size, by=c('Population', 'Rep'))
 The functions then look for matching values in `x` and `y` based on the columns provided in `by`. If no matches are found, then `NA` is returned. This can happen when you are combining datasets with incomplete information - for example, if `y` has a population that is missing from `x`.
 
 The four join functions are:
+
 * `inner_join()`: includes all rows in `x` and `y`.
 * `left_join()`: includes all rows in `x`.
 * `right_join()`: includes all rows in `y`.
 * `full_join()`: includes all rows in `x` or `y`.
 
 `inner_join()` will never return `NA`s. If no matches are found, the row is dropped.
+
 `left_join()` and `right_join()` are equivalent to using Excel's VLOOKUP function to add values from `y` to `x`, or to add values from `x` to `y`, respectively. Only unlike Excel, it does this over all columns, instead of just one. `NA`s can occur for missing matches. So for example, if you use `left_join()` by column `a` and `x` has values of `a` that don't exist in `y`, those rows will have `NA` in all columns from `y`.
+
 `full_join()` fully combines the two data.frames, and `NA` values can show up in columns from both `x` and `y` if there are values of the joining column `a` in `x` that don't appear in `y` and vice versa.
 
 By the way, a good way to anticipate if joins will result in `NA`s, or to explore why you got `NA`s, is to compare the two data.frames for mismatching values. `tidyverse` has a bunch of handy functions to compare elements of two vectors, such as `intersect()`, `union()`, or `setdiff()`. It's worth exploring these.
