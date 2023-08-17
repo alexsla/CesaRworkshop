@@ -2,15 +2,33 @@
 title: "Cesar R workshop: welcome to the tidyverse"
 author: "Alex Slavenko & Evatt Chrigwin"
 date: "`r Sys.Date()`"
-output: html_document
+output: webexercises::webexercises_default
 ---
 
+```{r setup, include = FALSE}
+library(webexercises)
+```
+
+# Welcome!
+
+This workshop is designed to bring your data wrangling skills to the next level, by utilising all of the capabilities of **THE TIDYVERSE**.
+
+![](images/fading_tidyverse.jpg)
+
+The `tidyverse` is a collection of R packages designed for data science. They all share an underlying design philosophy, grammar, and data structures. They all work together and make data wrangling a lot easier compared to base R, and can also integrate easily with lots of cool analysis and visualisation tools.
+
+If you've completed the Cesar liteRacy quiz, you should already have a basic familiarity with R, and have the required packages installed.
+
+Now, without further ado,
+
+![](images/welcome_tidyverse.jpg)
+
 ## Task 1.
-### Load all following packages: `tidyr`, `dplyr`, `magrittr`, `readr`, `ggplot2`?
+### Load all following packages: `tidyr`, `dplyr`, `magrittr`, `readr`, `ggplot2`
 
-#You should have all of these packages installed from the literacy quiz, but if not install them using `install.package("package_name")`. 
+You should have all of these packages installed from the literacy quiz, but if not install them using `install.package("package_name")`. 
 
-```{r}
+```{r, warning=FALSE, message=FALSE}
 #load packages
 library(tidyr)
 library(dplyr)
@@ -22,11 +40,30 @@ library(ggplot2)
 
 ## Task 2.
 ### Set your working directory for today
+
+Replace "YOUR_PATHWAY" with the pathway to whichever directory you're using today.
+
 ```{r, eval = FALSE}
 
-setwd('/Users/Evatt/Dropbox (cesar & EnviroDNA)/Evatt/R_workshop')
+setwd("YOUR_PATHWAY")
 
 ```
+
+`r hide("I hate working directories!")`
+
+Don't worry, there's a solution for you.
+
+One of the many cool features of RStudio is the ability to create R Projects, by clicking File -> New Project...
+
+Projects are self-contained directories. In their most basic form they come with an .Rproj file, which you use to load an R session with the working directory set to the project folder. As long as all of your code and data are contained within this folder, you won't need to mess around with working directories ever again. Not only does this make your own work process neater (because every project has its own data and code compartmentalised), it is also useful when you're working with collaborators - simply send them the entire project folder, complete with the data, code, and .Rproj file, and they have plug-and-play code ready that will work on their system.
+
+Some caveats:
+
+* Even when using projects, code might fail to run on a different computer if there are big differences in versions of R or required packages, and some package installation might be necessary. So it's not a perfect solution for compartmentalising and sharing code.
+* Sending data may be a problem if your data take up a lot of space.
+* Likewise, multiple projects can use the same underlying data, and if these data take up a lot of space (like spatial data) then creating a copy for each project can really eat up your computer's resources. In these cases, it might be better to keep these data in a separate folder and use the full pathway to import them in your scripts - but then you're back to this not being easy to share with collaborators.
+
+`r unhide()`
 
 ## Task 3.
 ### Import the dataset (workshop_2_data.csv) and store it as an object named data

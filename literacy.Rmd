@@ -85,9 +85,26 @@ If the answer is no, go ahead and install them. You won't need most of them for 
 ## Task 3.
 ### Import the example dataset (data.csv) and store it as an object named data
 
-*\textcolor{olive}{Hint: are you looking in the right working directory? The function `getwd()` can help you figure out where R is searching for the file. You may want to change the working directory using `setwd()`, or provide a full pathway to the file you're trying to import}*
+*\textcolor{olive}{Hint: use the `read.csv()` function, and use <- to store an object}*
 
-*\textcolor{olive}{Hint: use <- to store an object}*
+*\textcolor{olive}{Hint: are you looking in the right directory?}*
+
+### Explanation:
+
+Like other programming languages, R needs to be told where files are located. If a full pathway to the file is not provided, then R will search for the file in its current working directory.
+
+There are two ways in which you can find your working directory. First, you can use the the `getwd()` function, which prints out the pathway to the working directory to help you figure out where R is searching for the file. Second, you can look in the console pane (bottom right) in RStudio - at the top of the console pane there is a bar that shows you the working directory.
+
+Note that the working directory isn't only where R will look for files you're trying to import, but also where it will put files you are trying to export. So you may need to provide full pathways whenever you are trying to import or export a file.
+
+Alternatively, you can change the working directory using `setwd()`. This function allows you to set the working directory for your R session, and avoid having to provide full pathways. However, it is important to note two things:
+
+1. Pathways set using `setwd()` are specific to the computer (and user). Therefore, if you share your code with someone else, they will almost certainly have to change the pathway written in `setwd()`.
+2. `setwd()` only sets the working directory for **the current session**. This means that if you restart R, you will need to run the function again.
+
+Finally, R has environments, used to store objects and to search for stored objects. We won't be getting into the intricacies of environments, because it's pretty complicated. The important thing to know is that you can store objects, such as imported files or newly generated objects, into your global environment. You can see what is stored in the global environment in the top right pane of RStudio.
+
+So, if you just run `read.csv("data.csv")` the table will be printed in the console, but it won't be saved anywhere. You will have to import the table every time you want to do anything with it, which is not only tedious, but also impossible for many things we would want to do. But if you store it in the global environment using `data <- read.csv("data.csv")`, you can then access it and run other functions on it! You should now be able to see the object `data` in the Environment pane.
 
 ## Task 4.
 ### Find the mean of the second column
@@ -113,13 +130,13 @@ For instance, copy the following code into your console and press *Enter*:
 matrix(c(1,2,3,4,5,6), ncol = 2)
 ```
 
-You've just created a matrix! We've put in six numbers, and asked to generate a matrix with 2 columns. Therefore, there are 2 columns. What happens if you try to run the following code?
+You've just created a matrix! We've put in six numbers, and asked to generate a matrix with 2 columns. Therefore, there are 3 rows. What happens if you try to run the following code?
 
 ```{r matrix2, eval = FALSE}
 matrix(c(1,2,3,4,5,6,7), ncol = 2)
 ```
 
-All columns of matrix (and a data.frame) must have the same length, as do all rows. In this chunk of code we tried to create a matrix with 2 rows from 7 numbers - and 7 is not divisible by two. So what happened here?
+All columns of matrix (and a data.frame) must have the same length, as do all rows. In this chunk of code we tried to create a matrix with 2 columns from 7 numbers - and 7 is not divisible by two. The number of rows was then rounded up to 4. But 2*4 is 8, and our vector has only 7 elements. So what happened here?
 
 The input for the `matrix()` function is a vector (note a vector is always defined using `c()`). By default, the dimensions of the matrix (how many rows and how many columns) are defined by the optional arguments `nrow` and `ncol`, and then the matrix is populated with the elements of the input vector by columns - from top to bottom, and then from left to right. Once our matrix reached its eighth element (column 2, row 4) it no longer had values from the input matrix to plug in - so it started over from the top. Hence, the bottom right element of the matrix is 1, the first element of our vector.
 
@@ -139,7 +156,7 @@ mat <- matrix(c(1,2,3,4,5,6), ncol = 2)
 mat[,2]
 ```
 
-The output you have just printed is a vector, which is also the second column of the matrix. The function `mat[i,]` extracts the *i*th row of matrix *mat*, and the function `mat[,k]` extracts the *k*th column of matrix *mat*.
+The output you have just printed is a vector, which is also the second column of the matrix. The function `mat[i,]` extracts the *i*th row of matrix *mat*, and the function `mat[,k]` extracts the *k*th column of matrix *mat*. Try it yourself.
 
 What happens if you run `mat[3,2]`? You've just extracted the element of the matrix in row 3 and column 2 - which is the same as extracting the second element of the third row (`mat[3,][2]`), or the third element of the second column (`mat[,2][3]`).
 
@@ -171,7 +188,7 @@ df
 
 While these superficially seem similar, they are in fact different in another key aspect that differentiates matrices and data.frames. See how the elements in `mat` have quotation marks around them whereas the ones in `df` don't? That's because all elements in a matrix (or vector) must be of the same type. In data.frames, each column can be of a different type.
 
-What are data types? There are several data types in R, the most basic ones, and which we will use the most, are numeric (1, 2.5, 77, etc.), character (blah, ok, "wow how cool"), and logical (TRUE, FALSE). Quotation marks are used to show that something is a character - this can work for numerics that are coerced to be a character ("1" vs 1), or for longer strings that include spaces (like "wow how cool", which can be a single element of vector, as opposed to wow how cool which will create an error - R really doesn't like spaces). Numerics can be coerced into characters, characters can't be coerced into numerics. So, since we supplied a mixed vector to `mat`, every element there was coerced into a character. We can see this by running the following code:
+What are data types (or classes)? There are several data types in R. The most basic ones, and which we will use the most, are numeric (1, 2.5, 77, etc.), character (blah, ok, "wow how cool", etc.), and logical (TRUE, FALSE). Quotation marks are used to show that something is a character - this can work for numerics that are coerced to be a character ("1" vs 1), or for longer strings that include spaces (like "wow how cool", which can be a single element of vector, as opposed to wow how cool which will cause an error - R really doesn't like spaces). Numerics can be coerced into characters, characters can't be coerced into numerics. So, since we supplied a mixed vector (some numbers, some characters) to `mat`, every element there was coerced into a character. We can see this by running the following code:
 
 ```{r df3}
 str(mat)
@@ -185,7 +202,7 @@ str(df)
 
 And we can see that `df` is made up of a single numeric column, and a single character column.
 
-We can also coerce vectors manually. For example, we can coerce the first column of `df` into a character, like in `mat` by running `as.character(df$col1)`. We can also coerce the first column of `mat` into a numeric by running `as.numeric(mat[,1])`.
+We can also coerce vectors manually. For example, we can coerce the first column of `df` into a character, like in `mat`, by running `as.character(df$col1)`. We can also coerce the first column of `mat` into a numeric by running `as.numeric(mat[,1])`. Note that while we can make this change permanent in `df` by assigning the coerced values back to the first column (`df$col1 <- as.character(df$col1)`), trying to do the same thing with `mat` (`mat[,1] <- as.numeric(mat[,1])`) won't work, because matrices all elements of a matrix must be of the same type.
 
 So, to bring this all back to our original question - why couldn't we get the mean of the second column of `data`? Try to run the following code:
 ```{r df5, eval = FALSE}
@@ -212,7 +229,7 @@ as.numeric(data$column_b)
 
 ? cannot be coerced into a number, so it was turned into `NA`, which is how R designates missing values.
 
-By default, `mean()` returns `NA` if the input includes any missing value. Luckily, we can set the `na.rm` argument to `TRUE` to tell the function to remove all missing values from the input before caulcating the mean. Therefore, if you run the following code, you should get the correct mean for the column:
+By default, `mean()` returns `NA` if the input includes any missing value. Luckily, we can set the `na.rm` argument to `TRUE` to tell the function to remove all missing values from the input before calculating the mean. Therefore, if you run the following code, you should get the correct mean for the column:
 
 ```{r coerce2, eval = FALSE}
 mean(as.numeric(data$column_b), na.rm = TRUE)
@@ -226,10 +243,10 @@ mean(data$column c)
 
 Did that work? Why not? Can you fix this code so it runs properly?
 
-*\textcolor{olive}{Hint: use `str()` to see the column names}*
+*\textcolor{olive}{Hint: use `names()` to see the column names}*
 
 ### Explanation:
-Remember, R **really** doesn't like spaces. Our original csv file had the column named column c - which R automatically changed into column.c. Follow iSOP for naming conventions for columns to avoid issues like this.
+Remember, R **really** doesn't like spaces. Our original csv file had the column named column c - which R automatically changed into column.c. Follow iSOP #001 (Dataset Construction) for naming conventions for columns to avoid issues like this.
 
 ## Task 7.
 ### Run the following code:
@@ -264,4 +281,4 @@ Does no such thing.
 
 ### CONGRATULATIONS!
 
-If you've reached this far, you have succesfully completed the Cesar R literacy quiz! This means you are now ready to participate in the Cesar R workshop. Until then, time to celebRate!
+If you've reached this far, you have successfully completed the Cesar R literacy quiz! This means you are now ready to participate in the Cesar R workshop. Until then, time to celebRate!
