@@ -63,7 +63,9 @@ Some caveats:
 
 `r unhide()`
 
-### Import the dataset (workshop_2_data.csv) and store it as an object named `data1`.
+We've got us a nifty little dataset showing results of a bioassay performed on multiple populations. Our goal today is to gain some insights around survival dynamics, and eventually create a plot of survival as a function of growth. However, as we'll soon see, there are some steps that need to be taken along the way.
+
+### Import the dataset (Play_data.csv) and store it as an object named `data1`.
 
 ```{r}
 data1 <- read.csv('Play_data.csv')
@@ -98,7 +100,7 @@ str(data1)
 ```
 
 
-Survival was scored at multiple times during the experiment. Today, we will only consider survival at the last scoring time
+Survival was scored at multiple times during the experiment. Today, we will only consider survival at the last scoring time.
 
 ### Identify the latest scoring time using `distinct()` and then use `filter()` to create a new dataset that exludes all other scoring times.
 
@@ -121,7 +123,7 @@ data3 <- select(data2, 'Population', 'Rep', 'Time', 'Alive', 'Dead')
 head(data3)
 ```
 
-We are interested in the survival rate of our critters but we only have the number alive and dead per replicate.
+We are interested in the survival rate of our critters but we only have the number alive and dead per replicate reported in the dataset.
 
 ### We can use the `mutate()` function to create a new dataset with the coloumn for survival rate.
 
@@ -286,7 +288,8 @@ data5 %>%
 ```
 
 
-### Now we have the data all neat and tidy, let's save this version so we can send it to other people.
+Now we have the data all neat and tidy, let's save this version so we can send it to other people.
+
 ```{r}
 write.csv(data5, 'cool_old_data.csv')
 ```
@@ -380,15 +383,17 @@ By the way, a good way to anticipate if joins will result in `NA`s, or to explor
 
 ```{r, webex.hide="Click here to see the solution"}
 df_fin %>%
-  ggplot(aes(x = Growth, y = Survival)) +
+  ggplot(aes(x = Growth, y = Survival, colour = Population)) +
   geom_point() +
   geom_smooth(method = "lm")
 ```
 
 `r hide("Hey, plotting is fun. Show me more!")`
 
+R is amazing for data visualisation. And especially `tidyverse`, using the extremely powerful `ggplot2` package.
+
 ![](images/ggplot2.jpeg)
 
-We'd love to, but plotting is an entire can of worms. But if you found this workshop useful, let us know! We might be able to put on another workshop focusing on data visualisation.
+However, using `ggplot2` is an entire can of worms. But if you found this workshop useful, let us know! We might be able to put on another workshop focusing on data visualisation.
 
 `r unhide()`
