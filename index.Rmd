@@ -383,6 +383,8 @@ The four join functions are:
 
 By the way, a good way to anticipate if joins will result in `NA`s, or to explore why you got `NA`s, is to compare the two data.frames for mismatching values. `tidyverse` has a bunch of handy functions to compare elements of two vectors, such as `intersect()`, `union()`, or `setdiff()`. It's worth exploring these.
 
+![](images/join.png)
+
 `r unhide()`
 
 ### Can you create a plot of survival as a function of growth?
