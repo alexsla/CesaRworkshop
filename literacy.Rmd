@@ -93,7 +93,7 @@ If the answer is no, go ahead and install them. You won't need most of them for 
 
 Like other programming languages, R needs to be told where files are located. If a full pathway to the file is not provided, then R will search for the file in its current working directory.
 
-There are two ways in which you can find your working directory. First, you can use the the `getwd()` function, which prints out the pathway to the working directory to help you figure out where R is searching for the file. Second, you can look in the console pane (bottom right) in RStudio - at the top of the console pane there is a bar that shows you the working directory.
+There are two ways in which you can find your working directory. First, you can use the `getwd()` function, which prints out the pathway to the working directory to help you figure out where R is searching for the file. Second, you can look in the console pane (bottom right) in RStudio - at the top of the console pane there is a bar that shows you the working directory.
 
 Note that the working directory isn't only where R will look for files you're trying to import, but also where it will put files you are trying to export. So you may need to provide full pathways whenever you are trying to import or export a file.
 
@@ -109,16 +109,16 @@ So, if you just run `read.csv("data.csv")` the table will be printed in the cons
 ## Task 4.
 ### Find the mean of the second column
 
-Did that work? Why not?
-
 *\textcolor{olive}{Hint: you can find the mean using the `mean()` function}*
+
+Did that work? Why not?
 
 *\textcolor{olive}{Hint: try to use the `str()` function}*
 
 ### Explanation:
 R objects can generally come in three main varieties: vectors, matrices, and data.frames (we'll ignore the more complicated ones like arrays and lists for now).
 
-Vectors have one dimension. They can be single value, or a series of values. For instance, `c(1)` is a vector, but so is `c(2, 4, 6)`. The differences is only in their length.
+Vectors have one dimension. They can be single values, or series of values. For instance, `c(1)` is a vector, but so is `c(2, 4, 6)`. The differences is only in their length.
 
 You can extract any single element of a vector with the following indexing function: `vec[i]` which extracts the *i*th element of the vector *vec*.
 
@@ -140,7 +140,7 @@ All columns of matrix (and a data.frame) must have the same length, as do all ro
 
 The input for the `matrix()` function is a vector (note a vector is always defined using `c()`). By default, the dimensions of the matrix (how many rows and how many columns) are defined by the optional arguments `nrow` and `ncol`, and then the matrix is populated with the elements of the input vector by columns - from top to bottom, and then from left to right. Once our matrix reached its eighth element (column 2, row 4) it no longer had values from the input matrix to plug in - so it started over from the top. Hence, the bottom right element of the matrix is 1, the first element of our vector.
 
-No what happens if you run the following code?
+Now what happens if you run the following code?
 
 ```{r matrix3, eval = FALSE}
 matrix(c(1,2,3,4,5,6))
@@ -156,7 +156,7 @@ mat <- matrix(c(1,2,3,4,5,6), ncol = 2)
 mat[,2]
 ```
 
-The output you have just printed is a vector, which is also the second column of the matrix. The function `mat[i,]` extracts the *i*th row of matrix *mat*, and the function `mat[,k]` extracts the *k*th column of matrix *mat*. Try it yourself.
+The output you have just printed is a vector, which is also the second column of the matrix `mat`. The function `mat[i,]` extracts the *i*th row of matrix *mat*, and the function `mat[,k]` extracts the *k*th column of matrix *mat*. Try it yourself.
 
 What happens if you run `mat[3,2]`? You've just extracted the element of the matrix in row 3 and column 2 - which is the same as extracting the second element of the third row (`mat[3,][2]`), or the third element of the second column (`mat[,2][3]`).
 
@@ -186,9 +186,9 @@ mat
 df
 ```
 
-While these superficially seem similar, they are in fact different in another key aspect that differentiates matrices and data.frames. See how the elements in `mat` have quotation marks around them whereas the ones in `df` don't? That's because all elements in a matrix (or vector) must be of the same type. In data.frames, each column can be of a different type.
+While these two objects superficially seem similar, they are in fact different in another key aspect that differentiates matrices and data.frames. See how the elements in `mat` have quotation marks around them whereas the ones in `df` don't? That's because all elements in a matrix (or vector) must be of the same type. In data.frames, each column can be of a different type.
 
-What are data types (or classes)? There are several data types in R. The most basic ones, and which we will use the most, are numeric (1, 2.5, 77, etc.), character (blah, ok, "wow how cool", etc.), and logical (TRUE, FALSE). Quotation marks are used to show that something is a character - this can work for numerics that are coerced to be a character ("1" vs 1), or for longer strings that include spaces (like "wow how cool", which can be a single element of vector, as opposed to wow how cool which will cause an error - R really doesn't like spaces). Numerics can be coerced into characters, characters can't be coerced into numerics. So, since we supplied a mixed vector (some numbers, some characters) to `mat`, every element there was coerced into a character. We can see this by running the following code:
+What are data types (or classes)? There are several data types in R. The most basic ones, which we will use the most, are numeric (1, 2.5, 77, etc.), character (blah, ok, "wow how cool", etc.), and logical (TRUE, FALSE). Quotation marks are used to show that something is a character - this can work for numerics that are coerced to be a character ("1" vs 1), or for longer strings that include spaces (like "wow how cool", which can be a single element of vector, as opposed to wow how cool which will cause an error - R really doesn't like spaces). R can also infer whether a value is a numeric or a character if it is only comprised of digits (numeric) or includes any letters. Numerics can be coerced into characters, characters can't be coerced into numerics. So, since we supplied a mixed vector (some numbers, some characters) to `mat`, every element there was coerced into a character. We can see this by running the following code:
 
 ```{r df3}
 str(mat)
@@ -202,7 +202,7 @@ str(df)
 
 And we can see that `df` is made up of a single numeric column, and a single character column.
 
-We can also coerce vectors manually. For example, we can coerce the first column of `df` into a character, like in `mat`, by running `as.character(df$col1)`. We can also coerce the first column of `mat` into a numeric by running `as.numeric(mat[,1])`. Note that while we can make this change permanent in `df` by assigning the coerced values back to the first column (`df$col1 <- as.character(df$col1)`), trying to do the same thing with `mat` (`mat[,1] <- as.numeric(mat[,1])`) won't work, because matrices all elements of a matrix must be of the same type.
+We can also coerce vectors manually. For example, we can coerce the first column of `df` into a character, like in `mat`, by running `as.character(df$col1)`. We can also coerce the first column of `mat` into a numeric by running `as.numeric(mat[,1])`. Note that while we can make this change permanent in `df` by assigning the coerced values back to the first column (`df$col1 <- as.character(df$col1)`), trying to do the same thing with `mat` (`mat[,1] <- as.numeric(mat[,1])`) won't work, because all elements of a matrix must be of the same type.
 
 So, to bring this all back to our original question - why couldn't we get the mean of the second column of `data`? Try to run the following code:
 ```{r df5, eval = FALSE}
@@ -221,7 +221,7 @@ Did that work? Why not?
 *\textcolor{olive}{Hint: can the argument `na.rm` help you find the mean?}*
 
 ### Explanation:
-Look closely at `data$column_b`. You'll notice that the 11th element of that column is ?. That's the reason this column was a character in the first place (R automatically assigns data types to columns when importing a data.frame), causing the `mean()` function to fail originally. But what happens when we coerce the column into a numeric?
+Look closely at `data$column_b`. You'll notice that the 11th element of that column is ?. That's the reason this column was a character in the first place (R automatically infers the data types of columns when importing a data.frame), causing the `mean()` function to fail originally. But what happens when we coerce the column into a numeric?
 
 ```{r coerce1}
 as.numeric(data$column_b)
