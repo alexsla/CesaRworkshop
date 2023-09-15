@@ -1,7 +1,7 @@
 ---
 title: "Cesar R workshop: welcome to the tidyverse"
 author: "Alex Slavenko & Evatt Chrigwin"
-date: "`r Sys.Date()`"
+date: "22/09/2023"
 output: webexercises::webexercises_default
 ---
 
@@ -406,3 +406,24 @@ R is amazing for data visualisation. And especially `tidyverse`, using the extre
 However, using `ggplot2` is a massive package with a lot of options and uses. We're not opening this can of worms right now. But if you found this workshop useful, let us know! We might be able to put on another workshop focusing on data visualisation.
 
 `r unhide()`
+
+
+### Useful resources
+
+If you don't know how to do something in R, there are several useful places you can search for answers:
+
+First step is always https://www.google.com - chances are high someone has already run into the same issue as you, and an answer can be found online by googling it.
+
+![](images/google.jpg)
+
+Googling will likely lead you to https://stackoverflow.com/ - this another useful resource where you can post questions about code and get answers from the community. Note that not everyone is particularly nice on StackOverflow, and some people can have a pretty nasty attitude towards beginners. However, the R community is genuinely much more welcoming than other coding communities.
+
+![](images/stackoverflow.jpg)
+
+You can also look in https://r4ds.hadley.nz/ - the second edition of R for Data Science. This is a free online book that includes everything you may need to know about R, from the absolute basics to some pretty high-end stuff like writing your own functions and iteration. This book was written by Hadley Wickham, the man behind tidyverse, so it fits well with what we've covered in this workshop.
+
+![](images/hadley_wickham.jpg)
+
+Finally, there's always https://chat.openai.com/ - ChatGPT can be handy because it can often write functioning R code from basic questions in simple English. However, it's not always correct, and may write code that *looks* correct, but actually is a hot mess. Use with caution, and always double-check what it gives you.
+
+![](images/chatgpt.png)
