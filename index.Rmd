@@ -299,7 +299,7 @@ Oh cool, someone sent us some new data on growth rates! Let's add this to our ex
 
 ### Import the data
 ```{r}
-data_new <- read.csv('Oh_cool_some_new_data.csv')
+data_new <- read.csv('Oh_cool_some_new_growth_data.csv')
 ```
 
 ### Have a look at your data.
